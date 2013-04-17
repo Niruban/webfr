@@ -1,0 +1,21 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/animate.css')
+	body
+		header
+			div#masthead
+				a(href="/")
+					h1#logo
+				ul#sitemenu
+					li
+						form#search(method='get',action='/search')
+					li
+						a.siteabout.std(href='/about', title='About Online Leanring', target='_blank') About		
+					li
+						a.std(href='/login',title='Sigin to Online Learning') SignIn
+					li
+						a.std(href='/logon',title='SignOut of Online Learning') SignOut
+		block content
