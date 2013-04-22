@@ -1,18 +1,56 @@
-extends layout
-block content
-	#container
-		br
-		#content
-			section.loginform
-				form(name='login', action='index_submit', method='post', accept-charset='utf-8')
-					ul
-						li
-							label(for='usermail') Email
-							input(type='email', name='usermailid', placeholder='Email', required='required')
-						li
-							label(for='password') Password
-							input(type='password', name='password', placeholder='Password', required='required')
-						li
-							input(type='submit', value='Login', onclick='JavaScript:alert(\'Page Under Construction!!!\')')
-						li
-							input(type='reset', value='Reset')
+!!! 5
+html
+	head
+		title Node.js Login
+		link(rel='stylesheet', href='/vendor/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/style.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/animate.css')
+		script(type='text/javascript')
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-1890531-10']);
+			_gaq.push(['_setDomainName', 'braitsch.io']);
+			_gaq.push(['_trackPageview']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+	body
+		header
+					div#masthead
+						a(href="/")
+							h1#logo
+						ul#sitemenu
+							li
+								a.siteabout.std(href='/about', title='About Online Leanring', target='_blank') About		
+		#login-container
+			form( method="post")#login-form.well.span4
+				h1 Hello!
+				p.subheading Please Login To Your Account
+				label Username 
+				input(type="text", name="user", id='user-tf').span4.required
+				label Password
+				input(type="password", name="pass", id='pass-tf').span4.required
+				button(type="submit")#btn-login.btn.btn-primary
+					i.icon-lock.icon-white
+					| Sign in
+				label#remember-me.checkbox Remember Me
+					input(type="checkbox", checked='checked')
+				div.clear-fix
+				hr
+				div.btm-links
+					a(href='#')#forgot-password Forgot Your Password?
+					a(href='/signup')#create-account Create An Account
+
+		include modals/alert
+		include modals/lost-password
+
+		script(src='/vendor/jquery.min.js')
+		script(src='/vendor/jquery.form.js')
+		script(src='/vendor/bootstrap-modal.js')
+		script(src='/vendor/bootstrap-transition.js')
+		script(src='/js/views/login.js')
+		script(src='/js/controllers/loginController.js')
+		script(src='/js/form-validators/loginValidator.js')
+		script(src='/js/form-validators/emailValidator.js')

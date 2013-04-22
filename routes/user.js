@@ -10,5 +10,5 @@ exports.about = function(req, res){
 	res.render('about', {title: 'About'});
 };
 exports.login = function(req, res){
-	res.render('login', { title: 'LogIn'});
+			res.render('login', { title: 'Hello - Please Login To Your Account' });	
 };
